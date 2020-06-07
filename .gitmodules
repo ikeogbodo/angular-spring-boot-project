@@ -1,0 +1,3 @@
+[submodule "angular-spring-boot-project"]
+	path = angular-spring-boot-project
+	url = https://github.com/ikeogbodo/angular-spring-boot-project.git
