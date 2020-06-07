@@ -1,0 +1,18 @@
+package com.ike.teleportal.service;
+
+import java.util.List;
+
+import com.ike.teleportal.entity.Tele;
+
+public interface TeleService {
+
+    Tele create(Tele user);
+
+    Tele delete(int id);
+
+    List<Tele> findAll();
+
+    Tele findById(int id);
+
+    Tele update(Tele user);
+}

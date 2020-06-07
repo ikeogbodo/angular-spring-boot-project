@@ -1,0 +1,40 @@
+package com.ike.books.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ike.books.entity.Tele;
+import com.ike.books.repository.TeleRepository;
+
+import java.util.List;
+
+@Service
+public class TeleServiceImpl implements TeleService {
+
+    @Autowired
+    private TeleRepository repository;
+
+    public Tele create(Tele user) {
+        return repository.save(user);
+    }
+
+    public Tele delete(int id) {
+        Tele user = findById(id);
+        if(user != null){
+            repository.delete(user);
+        }
+        return user;
+    }
+
+    public List<Tele> findAll() {
+        return repository.findAll();
+    }
+
+    public Tele findById(int id) {
+        return repository.findOne(id);
+    }
+
+    public Tele update(Tele user) {
+        return repository.save(user);
+    }
+}

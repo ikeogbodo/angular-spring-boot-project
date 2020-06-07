@@ -1,0 +1,10 @@
+1591458689481	Rename package 'com.ike.teleportal'
+1591458720808	Rename type 'TeleController'
+1591458778315	Rename field 'teleService'
+1591458804610	Rename type 'Tele'
+1591458832055	Rename local variable 'user'
+1591458904863	Rename type 'TeleRepository'
+1591458924796	Rename type 'TeleService'
+1591458939558	Rename type 'TeleServiceImpl'
+1591459230893	Delete element
+1591459306179	Rename type 'TelePortalApplication'

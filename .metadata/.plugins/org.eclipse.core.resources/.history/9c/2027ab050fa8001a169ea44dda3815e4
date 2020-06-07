@@ -1,0 +1,19 @@
+package com.ike.books;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/*
+ * How to Exclude configurations:
+ * @SpringBootApplication(exclude = {
+ *   DataSourceAutoConfiguration.class, 
+ *   DataSourceTransactionManagerAutoConfiguration.class, 
+ *   HibernateJpaAutoConfiguration.class
+ */
+@SpringBootApplication
+public class TelePortalApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TelePortalApplication.class, args);
+	}
+}

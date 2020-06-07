@@ -1,0 +1,58 @@
+package com.ike.books.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.ike.books.entity.Tele;
+import com.ike.books.service.TeleService;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
+//Cross-Origin Resource Sharing (CORS) 
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
+//@RequestMapping({"/api"})
+@RequestMapping({"/teles"})
+public class TeleController {
+
+    @Autowired
+    private TeleService teleService;
+
+    @PostMapping
+    public Tele create(@RequestBody Tele user){
+        return teleService.create(user);
+    }
+
+    @GetMapping(path = {"/{id}"})
+    public Tele findOne(@PathVariable("id") int id){
+        return teleService.findById(id);
+    }
+
+    @PutMapping(path = {"/{id}"})
+    public Tele update(@PathVariable("id") int id, @RequestBody Tele user){
+        user.setId(id);
+        return teleService.update(user);
+    }
+
+    @DeleteMapping(path ={"/{id}"})
+    public Tele delete(@PathVariable("id") int id) {
+        return teleService.delete(id);
+    }
+
+    @GetMapping
+    public Collection<Tele> findAll() {
+    	return teleService.findAll().stream()
+    	.filter(this::isInGeorgia)
+    	.collect(Collectors.toList());
+    }
+    
+    private boolean isInGeorgia(Tele tele) {
+    	return tele.getState().equalsIgnoreCase("GA");
+    }
+//    public List<Tele> findAll(){
+//    	System.out.println("in Findall");
+//        return teleService.findAll();
+//    }
+}
