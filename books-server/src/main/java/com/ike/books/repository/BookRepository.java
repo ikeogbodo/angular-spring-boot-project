@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface BookRepository extends Repository<Book, Integer> {
 
-    void delete(Book user);
+    void delete(Book book);
     List<Book> findAll();
     Book findOne(int id);
-    Book save(Book user);
+    Book save(Book book);
 }

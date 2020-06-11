@@ -8,47 +8,43 @@ import org.springframework.web.bind.annotation.*;
 import com.ike.books.Exception.ResourceNotFoundException;
 import com.ike.books.entity.Author;
 import com.ike.books.entity.Book;
-import com.ike.books.entity.Publisher;
 import com.ike.books.service.BookService;
 
 @CrossOrigin()
 @RestController
-@RequestMapping({"/books"})
-public class BooksController {
+@RequestMapping({"/authors"})
+public class AuthorsController {
 
     @Autowired
     private BookService bookService;
 
     @PostMapping
-    public Book create(@RequestBody Book book){
-        return bookService.create(book);
+    public Author create(@RequestBody Author author){
+        return bookService.createAuthor(author);
     }
 
     @GetMapping(path = {"/{id}"})
-    public Book findOne(@PathVariable("id") int id){
-    	Book book = bookService.findById(id);
-    	if (book == null) {
+    public Author findOne(@PathVariable("id") int id){
+        Author author = bookService.findAuthorById(id);
+    	if (author == null) {
     		throw new ResourceNotFoundException("Author not found with id " + id);
     	}
-    	return book;
     	
-    	//return bookService.findById(id);
-      
+    	return author;
     }
 
     @PutMapping
-    public Book update(@RequestBody Book book){
-        return bookService.update(book);
+    public Author update(@RequestBody Author author){
+        return bookService.updateAuthor(author);
     }
 
     @DeleteMapping(path ={"/{id}"})
-    public Book delete(@PathVariable("id") int id) {
-        return bookService.delete(id);
+    public Author delete(@PathVariable("id") int id) {
+        return bookService.deleteAuthor(id);
     }
 
     @GetMapping    
-    public List<Book> findAll(){
-    	System.out.println("in Findall");
-        return bookService.findAll();
+    public List<Author> findAllAuthors(){
+        return bookService.findAllAuthors();
     }
 }

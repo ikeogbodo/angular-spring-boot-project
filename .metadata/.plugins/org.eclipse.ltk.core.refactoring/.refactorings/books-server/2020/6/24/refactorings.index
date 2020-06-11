@@ -1,2 +1,21 @@
 1591494320074	Rename package 'com.ike.teleportal'
 1591494357416	Rename type 'TelePortalApplicationTests'
+1591548060999	Copy compilation unit
+1591550384561	Delete element
+1591550428665	Copy compilation unit
+1591551135170	Rename type 'BooksServerApplicationMockMvcTests'
+1591551178705	Rename type 'BooksServerApplicationINTTests'
+1591551189725	Rename type 'BooksServerApplicationIntegraionTests'
+1591553149771	Delete element
+1591637309152	Copy compilation unit
+1591637568644	Copy compilation unit
+1591637755160	Copy compilation unit
+1591637904633	Rename type 'Book'
+1591649358577	Copy compilation unit
+1591649420247	Copy compilation unit
+1591658821570	Copy compilation unit
+1591658846550	Copy compilation unit
+1591715084393	Rename type 'Books'
+1591715183438	Rename type 'Authors'
+1591715200466	Rename type 'Publishers'
+1591819716616	Rename type 'Users'

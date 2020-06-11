@@ -1,67 +1,133 @@
 package com.ike.books.entity;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
-@Table(name = "book")
+@Table(name = "books")
 public class Book {
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int bookid;
     
-    @Column
+    @Column(unique = true)
     private String title;
-    
-    @Column
-    private String author;
-    
-    @Column
-    private String publisher;
-    
-    @Column
-    private String pages;
 
-	public int getId() {
-		return id;
+    private int author;
+    private int publisher;
+    
+    @ManyToOne
+    @JoinColumn(name = "authorid", nullable = false)
+    @JsonIgnoreProperties("authors")
+    private Author authors;
+    
+    @ManyToOne
+    @JoinColumn(name = "publisherid", nullable = false)
+    @JsonIgnoreProperties("publishers")
+    private Publisher publishers;
+    
+	@Column
+	@Temporal(TemporalType.DATE)
+    private Date publisheddate;
+    
+    @Column
+    private int pages;
+    
+    public Book(int bookid, String title, Author author, Publisher publisher, Date publisheddate, int pages) {
+		super();
+		this.bookid = bookid;
+		this.title = title;
+		this.authors = author;
+		this.publishers = publisher;
+		this.publisheddate = publisheddate;
+		this.pages = pages;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public Book() {
+    	
+    }
+    
+
+    public int getBookid() {
+		return bookid;
 	}
+
+
+	public void setBookid(int bookid) {
+		this.bookid = bookid;
+	}
+
 
 	public String getTitle() {
 		return title;
 	}
 
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public String getAuthor() {
-		return author;
+
+	public Author getAuthors() {
+		return authors;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+
+	public void setAuthors(Author authors) {
+		this.authors = authors;
 	}
 
-	public String getPublisher() {
-		return publisher;
+
+	public Publisher getPublishers() {
+		return publishers;
 	}
 
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
+
+	public void setPublishers(Publisher publishers) {
+		this.publishers = publishers;
 	}
 
-	public String getPages() {
+
+	public Date getPublisheddate() {
+		return publisheddate;
+	}
+
+
+	public void setPublisheddate(Date publisheddate) {
+		this.publisheddate = publisheddate;
+	}
+
+
+	public int getPages() {
 		return pages;
 	}
 
-	public void setPages(String pages) {
+
+	public void setPages(int pages) {
 		this.pages = pages;
 	}
-    
+
+	public int getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(int author) {
+		this.author = author;
+	}
+
+	public int getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(int publisher) {
+		this.publisher = publisher;
+	}
+
  
 }
