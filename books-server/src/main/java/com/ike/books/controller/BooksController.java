@@ -31,9 +31,6 @@ public class BooksController {
     		throw new ResourceNotFoundException("Author not found with id " + id);
     	}
     	return book;
-    	
-    	//return bookService.findById(id);
-      
     }
 
     @PutMapping

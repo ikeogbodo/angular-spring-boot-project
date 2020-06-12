@@ -31,12 +31,12 @@ public class Publisher {
 		this.publishername = publisher;
 	}
 
-	public int getPublihser_id() {
+	public int getPublihserid() {
 		return publisherid;
 	}
 
-	public void setPublisher_id(int publisher_id) {
-		this.publisherid = publisher_id;
+	public void setPublisherid(int publisherid) {
+		this.publisherid = publisherid;
 	}
     
  

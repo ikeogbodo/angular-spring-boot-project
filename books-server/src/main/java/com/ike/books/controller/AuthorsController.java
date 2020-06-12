@@ -27,7 +27,7 @@ public class AuthorsController {
     public Author findOne(@PathVariable("id") int id){
         Author author = bookService.findAuthorById(id);
     	if (author == null) {
-    		throw new ResourceNotFoundException("Author not found with id " + id);
+    		throw new ResourceNotFoundException("Book not found with id " + id);
     	}
     	
     	return author;
