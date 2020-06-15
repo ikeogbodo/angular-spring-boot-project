@@ -19,7 +19,10 @@ public class Book {
     @Column(unique = true)
     private String title;
 
+    @Column
     private int author;
+    
+    @Column
     private int publisher;
     
     @ManyToOne

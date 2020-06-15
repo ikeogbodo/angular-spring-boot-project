@@ -9,7 +9,9 @@ import com.ike.books.Exception.ResourceNotFoundException;
 import com.ike.books.entity.Author;
 import com.ike.books.entity.Book;
 import com.ike.books.entity.Publisher;
+import com.ike.books.service.AuthorService;
 import com.ike.books.service.BookService;
+import com.ike.books.service.PublisherService;
 
 @CrossOrigin()
 @RestController
@@ -19,8 +21,18 @@ public class BooksController {
     @Autowired
     private BookService bookService;
 
+    @Autowired
+    private AuthorService authorService;
+    
+    @Autowired
+    private PublisherService publisherService;
+    
     @PostMapping
     public Book create(@RequestBody Book book){
+    	Publisher publisher = publisherService.findPublisherById(book.getPublisher());
+    	Author author = authorService.findAuthorById((book.getAuthor()));
+    	book.setPublishers(publisher);
+    	book.setAuthors(author);    	
         return bookService.create(book);
     }
 
@@ -35,6 +47,10 @@ public class BooksController {
 
     @PutMapping
     public Book update(@RequestBody Book book){
+    	Publisher publisher = publisherService.findPublisherById(book.getPublisher());
+    	Author author = authorService.findAuthorById((book.getAuthor()));
+    	book.setPublishers(publisher);
+    	book.setAuthors(author); 
         return bookService.update(book);
     }
 

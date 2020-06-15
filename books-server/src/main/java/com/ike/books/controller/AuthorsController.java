@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.ike.books.Exception.ResourceNotFoundException;
 import com.ike.books.entity.Author;
-import com.ike.books.entity.Book;
-import com.ike.books.service.BookService;
+import com.ike.books.service.AuthorService;
 
 @CrossOrigin()
 @RestController
@@ -16,16 +15,16 @@ import com.ike.books.service.BookService;
 public class AuthorsController {
 
     @Autowired
-    private BookService bookService;
+    private AuthorService athorService;
 
     @PostMapping
     public Author create(@RequestBody Author author){
-        return bookService.createAuthor(author);
+        return athorService.createAuthor(author);
     }
 
     @GetMapping(path = {"/{id}"})
     public Author findOne(@PathVariable("id") int id){
-        Author author = bookService.findAuthorById(id);
+        Author author = athorService.findAuthorById(id);
     	if (author == null) {
     		throw new ResourceNotFoundException("Book not found with id " + id);
     	}
@@ -35,16 +34,16 @@ public class AuthorsController {
 
     @PutMapping
     public Author update(@RequestBody Author author){
-        return bookService.updateAuthor(author);
+        return athorService.updateAuthor(author);
     }
 
     @DeleteMapping(path ={"/{id}"})
     public Author delete(@PathVariable("id") int id) {
-        return bookService.deleteAuthor(id);
+        return athorService.deleteAuthor(id);
     }
 
     @GetMapping    
     public List<Author> findAllAuthors(){
-        return bookService.findAllAuthors();
+        return athorService.findAllAuthors();
     }
 }

@@ -1,6 +1,7 @@
 package com.ike.books.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Authors")
@@ -12,18 +13,20 @@ public class Author {
     private int authorid;
 
     @Column
+    @NotNull
     private String authorname;
 
 	public Author() {
     	
     }
     
-	public Author(String title, String author_name) {
+	public Author(int id, String author_name) {
 		super();
 		this.authorname = author_name;
+		this.authorid = id;
 	}
-	
-    public int getAuthorid() {
+
+	public int getAuthorid() {
 		return authorid;
 	}
 

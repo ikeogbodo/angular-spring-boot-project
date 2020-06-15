@@ -14,15 +14,15 @@ public interface BookService {
     Book findById(int id);
     Book update(Book user);
     
-    Author createAuthor(Author author);
-    Author deleteAuthor(int id);
-    List<Author> findAllAuthors();
-    Author findAuthorById(int id);
-    Author updateAuthor(Author author);
-    
-    Publisher createPublisher(Publisher publisher);
-    Publisher deletePublisher(int id);
-    List<Publisher> findAllPublishers();
-    Publisher findPublisherById(int id);
-    Publisher updatePublisher(Publisher publisher);
+//    Author createAuthor(Author author);
+//    Author deleteAuthor(int id);
+//    List<Author> findAllAuthors();
+//    Author findAuthorById(int id);
+//    Author updateAuthor(Author author);
+//    
+//    Publisher createPublisher(Publisher publisher);
+//    Publisher deletePublisher(int id);
+//    List<Publisher> findAllPublishers();
+//    Publisher findPublisherById(int id);
+//    Publisher updatePublisher(Publisher publisher);
 }

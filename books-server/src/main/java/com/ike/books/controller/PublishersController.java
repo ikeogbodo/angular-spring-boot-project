@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.ike.books.Exception.ResourceNotFoundException;
-import com.ike.books.entity.Author;
-import com.ike.books.entity.Book;
 import com.ike.books.entity.Publisher;
-import com.ike.books.service.BookService;
+import com.ike.books.service.PublisherService;
 
 @CrossOrigin()
 @RestController
@@ -17,16 +15,16 @@ import com.ike.books.service.BookService;
 public class PublishersController {
 
     @Autowired
-    private BookService bookService;
+    private PublisherService publisherService;
 
     @PostMapping
     public Publisher create(@RequestBody Publisher publisher){
-        return bookService.createPublisher(publisher);
+        return publisherService.createPublisher(publisher);
     }
 
     @GetMapping(path = {"/{id}"})
     public Publisher findPublisherById(@PathVariable("id") int id){
-    	Publisher publisher = bookService.findPublisherById(id);
+    	Publisher publisher = publisherService.findPublisherById(id);
     	if (publisher == null) {
     		throw new ResourceNotFoundException("Publisher not found with id " + id);
     	}
@@ -36,16 +34,16 @@ public class PublishersController {
 
     @PutMapping
     public Publisher updatePublisher(@RequestBody Publisher publisher){
-        return bookService.updatePublisher(publisher);
+        return publisherService.updatePublisher(publisher);
     }
 
     @DeleteMapping(path ={"/{id}"})
     public Publisher deletePublisher(@PathVariable("id") int id) {
-        return bookService.deletePublisher(id);
+        return publisherService.deletePublisher(id);
     }
 
     @GetMapping    
     public List<Publisher> findAllPublishers(){
-        return bookService.findAllPublishers();
+        return publisherService.findAllPublishers();
     }
 }
