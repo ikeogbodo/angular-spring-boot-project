@@ -8,14 +8,12 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.doNothing;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -23,10 +21,7 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 
 import com.ike.books.entity.Author;
-import com.ike.books.entity.Book;
-import com.ike.books.entity.Publisher;
 import com.ike.books.repository.AuthorRepository;
-import com.ike.books.repository.BookRepository;
 
 @RunWith(SpringRunner.class)
 public class AuthorServiceImplMockTest {
