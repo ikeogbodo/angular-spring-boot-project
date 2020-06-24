@@ -38,7 +38,7 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 
 	public Author findAuthorById(int id) {
-		return authorRepository.findOne(id);
+		return authorRepository.findByauthorid(id);
 	}
 	
 	public Author updateAuthor(Author author) {

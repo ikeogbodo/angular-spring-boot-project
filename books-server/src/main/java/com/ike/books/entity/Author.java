@@ -41,7 +41,4 @@ public class Author {
 	public void setAuthorname(String authorname) {
 		this.authorname = authorname;
 	}
-
-
- 
 }

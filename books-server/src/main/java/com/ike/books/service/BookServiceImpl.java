@@ -1,21 +1,16 @@
 package com.ike.books.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ike.books.entity.Author;
 import com.ike.books.entity.Book;
-import com.ike.books.entity.Publisher;
-import com.ike.books.repository.AuthorRepository;
 import com.ike.books.repository.BookRepository;
-import com.ike.books.repository.PublisherRepository;
-
-import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
 
-    //@Autowired
     private BookRepository bookRepository;
 
     @Autowired

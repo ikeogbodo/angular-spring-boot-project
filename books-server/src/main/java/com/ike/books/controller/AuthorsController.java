@@ -9,7 +9,7 @@ import com.ike.books.Exception.ResourceNotFoundException;
 import com.ike.books.entity.Author;
 import com.ike.books.service.AuthorService;
 
-@CrossOrigin()
+@CrossOrigin (origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping({"/authors"})
 public class AuthorsController {

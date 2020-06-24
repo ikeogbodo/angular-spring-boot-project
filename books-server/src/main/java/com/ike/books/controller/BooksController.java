@@ -13,7 +13,7 @@ import com.ike.books.service.AuthorService;
 import com.ike.books.service.BookService;
 import com.ike.books.service.PublisherService;
 
-@CrossOrigin()
+@CrossOrigin (origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping({"/books"})
 public class BooksController {
@@ -61,7 +61,6 @@ public class BooksController {
 
     @GetMapping    
     public List<Book> findAll(){
-    	System.out.println("in Findall");
         return bookService.findAll();
     }
 }

@@ -54,8 +54,7 @@ public class Book {
 
 	public Book() {
     	
-    }
-    
+    }  
 
     public int getBookid() {
 		return bookid;
@@ -66,51 +65,41 @@ public class Book {
 		this.bookid = bookid;
 	}
 
-
 	public String getTitle() {
 		return title;
 	}
-
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-
 	public Author getAuthors() {
 		return authors;
 	}
-
 
 	public void setAuthors(Author authors) {
 		this.authors = authors;
 	}
 
-
 	public Publisher getPublishers() {
 		return publishers;
 	}
-
 
 	public void setPublishers(Publisher publishers) {
 		this.publishers = publishers;
 	}
 
-
 	public Date getPublisheddate() {
 		return publisheddate;
 	}
-
 
 	public void setPublisheddate(Date publisheddate) {
 		this.publisheddate = publisheddate;
 	}
 
-
 	public int getPages() {
 		return pages;
 	}
-
 
 	public void setPages(int pages) {
 		this.pages = pages;
@@ -132,5 +121,4 @@ public class Book {
 		this.publisher = publisher;
 	}
 
- 
 }

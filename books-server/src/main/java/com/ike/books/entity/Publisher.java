@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 public class Publisher {
 
     @Id
-    @Column
+    @Column (name = "publisherid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int publisherid;
     
@@ -41,6 +41,4 @@ public class Publisher {
 	public void setPublisherid(int publisherid) {
 		this.publisherid = publisherid;
 	}
-    
- 
 }

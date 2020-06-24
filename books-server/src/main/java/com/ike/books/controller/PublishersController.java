@@ -9,7 +9,7 @@ import com.ike.books.Exception.ResourceNotFoundException;
 import com.ike.books.entity.Publisher;
 import com.ike.books.service.PublisherService;
 
-@CrossOrigin()
+@CrossOrigin (origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping({"/publishers"})
 public class PublishersController {
@@ -44,6 +44,6 @@ public class PublishersController {
 
     @GetMapping    
     public List<Publisher> findAllPublishers(){
-        return publisherService.findAllPublishers();
+       return publisherService.findAllPublishers();
     }
 }
